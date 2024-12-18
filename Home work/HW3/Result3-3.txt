@@ -1,0 +1,43 @@
+Enter Matrix1
+Enter number rows and columns: 3 3
+Enter [0 0] value: 1
+Enter [0 1] value: 2
+Enter [0 2] value: 3
+Enter [1 0] value: 4
+Enter [1 1] value: 5
+Enter [1 2] value: 6
+Enter [2 0] value: 7
+Enter [2 1] value: 8
+Enter [2 2] value: 9
+
+Enter Matrix2
+Enter number rows and columns: 3 3
+Enter [0 0] value: 9
+Enter [0 1] value: 8
+Enter [0 2] value: 7
+Enter [1 0] value: 6
+Enter [1 1] value: 5
+Enter [1 2] value: 4
+Enter [2 0] value: 3
+Enter [2 1] value: 2
+Enter [2 2] value: 1
+
+Matrix1 :
+1 2 3
+4 5 6
+7 8 9
+
+Matrix2 :
+9 8 7
+6 5 4
+3 2 1
+
+Transpose of Matrix1 is :
+1 4 7
+2 5 8
+3 6 9
+
+Matrix1 x Matrix2 is :
+30 24 18
+84 69 54
+138 114 90

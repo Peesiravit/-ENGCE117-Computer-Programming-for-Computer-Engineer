@@ -1,34 +1,35 @@
+/*#include <stdio.h>
+#include <string.h>
+
+void GetSet( int [], int * ) ;
+
+int main() {
+ int *data, num ;
+ GetSet( &data, &num ) ;
+ return 0 ;
+}//end function
+*/
+ 
 #include <stdio.h>
 #include <string.h>
 
-// ประกาศฟังก์ชัน GetSet ที่รับพอยน์เตอร์อาร์เรย์และพอยน์เตอร์ของจำนวนสมาชิก
-void GetSet(int data[], int *num) {
-    // รับจำนวนสมาชิก
-    scanf("%d", num);
-    
-    // รับค่าของสมาชิกแต่ละตัว
-    for (int i = 0; i < *num; i++) {
-        scanf("%d", &data[i]);  // รับค่าของแต่ละสมาชิก
-    }
-
-    // แสดงผลข้อมูลที่รับเข้ามา
-    printf("Data: ");
-    for (int i = 0; i < *num; i++) {
-        printf("%d ", data[i]);
-    }
-    printf("\n");
-}
+void GetSet( int data[ ], int *num ) ;//ประกาศใช้ฟังก์ชั่น GetSet
 
 int main() {
-    int *data; // พอยน์เตอร์อาร์เรย์
-    int num; // จำนวนสมาชิก
+    int *data, num ;
+    data = new int[ num ] ;
+    GetSet( data, &num ) ; 
+    for ( int i = 0 ; i < num ; i++ ) {
+        printf( "%d ", data[ i ] ) ;
+    }//end for
+    printf( "\n" ) ;
+    return 0 ;
+}//end function
 
-    // อาร์เรย์ที่ใช้เก็บข้อมูลจะถูกประกาศใน main()
-    int dataArray[100]; // อาร์เรย์ขนาดคงที่ (สามารถรับได้สูงสุด 100 สมาชิก)
+void GetSet( int data[ ], int *num ) {
+    scanf( "%d", num ) ;
+    for(int i = 0 ; i < *num ; i++ ) {
+        scanf( "%d", &data[ i ] ) ;
+    } //end for
 
-    // ส่งที่อยู่ของอาร์เรย์ dataArray ไปยัง GetSet
-    data = dataArray; // ให้ data ชี้ไปที่ dataArray
-    GetSet(data, &num); // เรียกใช้ฟังก์ชัน GetSet
-
-    return 0;
-}
+}//end function

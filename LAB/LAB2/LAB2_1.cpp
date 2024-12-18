@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h> 
+/*#inclue <stdio.h>
 
 void reverse( char str1[], char str2[] ) ;
 
@@ -7,14 +6,25 @@ int main() {
     char text[ 50 ] = "I Love You" ;
     char out[ 50 ] ;
     reverse( text, out ) ;
-    printf( "%s" , out ) ;
+    return 0 ;
+}//end function*/
+
+#include <stdio.h>
+
+void reverse( char str1[], char str2[] ) ;
+
+int main() {
+    char text[ 50 ] = "I Love You" ;
+    char out[ 50 ] ;
+    reverse( text, out ) ;
     return 0 ;
 }//end function
-void reverse(char str1[], char str2[]){
-    int len = strlen( str1 );
-    for ( int i = 0 ; i < len ; i++){ 
-        str2[ len - 1 - i ] = str1[i] ;
 
-    }
-    str2[ len ] = '\0';
-}
+void reverse( char str1[], char str2[] ) {
+    int j = 0 ;
+    for( int i = 50 ; i >= 0 ; i-- ) {
+        str2[ j ] = str1[ i ] ;
+        printf( "%c", str2[ j ] ) ;
+        j++ ;
+    }//end for
+}//end function

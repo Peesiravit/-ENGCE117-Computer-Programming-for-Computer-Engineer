@@ -1,34 +1,46 @@
-#include <stdio.h>
-#include <string.h>  // สำหรับ strtok()
+/*#include <stdio.h>
 
-void explode(char str1[], char splitter, char str2[][10], int *count) {
-    int i = 0;
-    char *token;
-
-    // ใช้ strtok() เพื่อแยกข้อความจาก str1 ตามตัวแบ่ง splitter
-    token = strtok(str1, &splitter);  // แยกข้อความแรก
-
-    while (token != NULL) {
-        strcpy(str2[i], token);  // เก็บข้อความที่แยกได้ใน str2[i]
-        i++;  // เพิ่มดัชนี
-        token = strtok(NULL, &splitter);  // แยกข้อความถัดไป
-    }
-
-    *count = i;  // เก็บจำนวนข้อความที่แยกได้ใน count
-}
+void explode( char str1[], char splitter, char str2[][10], int *count ) ;
 
 int main() {
-    char out[20][10];  // อาเรย์สำหรับเก็บข้อความที่แยก
-    int num;  // ตัวแปรสำหรับเก็บจำนวนข้อความที่แยกได้
+    char out[ 20 ][ 10 ] ;
+    int num ;
+    explode( "I/Love/You", "/" ) ;
+    return 0 ;
+}//end function*/
 
-    // เรียกใช้ฟังก์ชัน explode()
-    explode("I/Love/You", '/', out, &num);
+#include <stdio.h>
+#include <string.h>
 
-    // แสดงผลลัพธ์
-    printf("Number of parts: %d\n", num);
-    for (int i = 0; i < num; i++) {
-        printf("str2[%d] = %s\n", i, out[i]);
-    }
+void explode( char str1[ ], char splitter, char str2[ ][10], int *count ) ;
 
-    return 0;
-} //end function
+int main() {
+    char out[ 20 ][ 10 ] ;
+    int num ;
+    explode( "I/Love/You", '/', out, &num ) ;
+
+    for( int i = 0 ; i < num ; i++ ) {
+        printf( "str2[%d] = %s\n", i , out[ i ] ) ; 
+    }//end for
+    printf( "count = %d", num ) ;
+    return 0 ;
+}//end function
+
+// *str[10]  //hello
+// str[][10]
+void explode( char str1[ ], char splitter, char str2[ ][ 10 ], int *count ) {
+    int  j = 0 ;
+    int k = 0;
+    int len = strlen( str1 ) ;
+    for( int i = 0 ; i < len ; i++ ) {
+        if( str1[ i ] == splitter ) {
+            str2[ k ][ j ] = '\0';
+            k++ ;
+            j = 0;
+            continue ;
+        }//end if
+        str2[ k ][ j ] = str1[ i ] ;
+        j++ ;
+    }//end for
+    *count = k + 1 ;
+}// end function

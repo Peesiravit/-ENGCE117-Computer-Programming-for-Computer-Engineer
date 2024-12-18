@@ -15,18 +15,19 @@
 */
 #include <stdio.h>  // ใช้สำหรับการรับข้อมูลและแสดงผล
 
-int main () {
+int main () 
+{
     char firstName [ 50 ] , lastName [ 50 ] ;  // ประกาศตัวแปรสำหรับเก็บชื่อและนามสกุล
 
     // รับข้อมูลจากผู้ใช้
-    printf ( "First Name: " ) ;
-    scanf ( "%s" , firstName ) ;  // รับชื่อจากผู้ใช้
+        printf ( "First Name: " ) ;
+            scanf ( "%s" , firstName ) ;  // รับชื่อจากผู้ใช้
 
-    printf ( "Last Name: " ) ;
-    scanf ( "%s" , lastName ) ;   // รับนามสกุลจากผู้ใช้
+        printf ( "Last Name: " ) ;
+            scanf ( "%s" , lastName ) ;   // รับนามสกุลจากผู้ใช้
 
     // แสดงผล
-    printf ( "%s %s TC, RMUTL, Chiang Mai, Thailand\n" , firstName , lastName ) ;  // แสดงผลตามที่โจทย์กำหนด
+        printf ( "%s %s TC, RMUTL, Chiang Mai, Thailand\n" , firstName , lastName ) ;  // แสดงผลตามที่โจทย์กำหนด
 
     return 0 ;
 }

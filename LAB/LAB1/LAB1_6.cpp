@@ -1,50 +1,53 @@
+/*#include <stdio.h>
+int GetMatrix( int *row, int *col ) ;
+int main() {
+    int *data, m, n ;
+    data = GetMatrix( &m, &n ) ;
+    return 0 ;
+}//end function*/
+
 #include <stdio.h>
-#include <stdlib.h>  // สำหรับ malloc
 
-int* GetMatrix(int *row, int *col) {
-    // ขอให้ผู้ใช้กรอกจำนวนแถวและคอลัมน์
-    printf("Enter the number of rows: ");
-    scanf("%d", row);
-    printf("Enter the number of columns: ");
-    scanf("%d", col);
-
-    // จองหน่วยความจำสำหรับเมทริกซ์
-    int *value = (int *)malloc(*row * *col * sizeof(int));  // จองหน่วยความจำแบบ 1 มิติ
-
-    if (value == NULL) {
-        printf("Memory allocation failed!\n");
-        exit(1);  // หากการจองหน่วยความจำล้มเหลว
-    }
-
-    // ขอให้ผู้ใช้กรอกค่าของสมาชิกในเมทริกซ์
-    printf("Enter the elements of the matrix:\n");
-    for (int i = 0; i < *row; i++) {
-        for (int j = 0; j < *col; j++) {
-            printf("Element [%d][%d]: ", i + 1, j + 1);
-            scanf("%d", &value[i * (*col) + j]);  // เก็บค่าลงในอาเรย์ 1 มิติ
-        }
-    }
-
-    return value;  // ส่งกลับพอยน์เตอร์ที่ชี้ไปยังอาเรย์
-}
+int *GetMatrix( int *row, int *col ) ;// ประกาศใช้ฟังก์ชั่น  GetMatrix
 
 int main() {
-    int *data, m, n;
+    int *data, m, n ;
+    data = GetMatrix( &m, &n ) ;//เรียกใช้ฟังก์ชั่น
+    return 0 ;//จบการทำงาน
+}//end function
 
-    // เรียกใช้งานฟังก์ชัน GetMatrix
-    data = GetMatrix(&m, &n);
+ 
+int *GetMatrix( int *row, int *col ) {
+    int *value ;
+    scanf( "%d %d", row, col ) ;//ใส่แถว คอลัมน์
 
-    // แสดงผลเมทริกซ์ที่ผู้ใช้กรอก
-    printf("\nThe matrix is:\n");
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", data[i * n + j]);  // แสดงสมาชิกในเมทริกซ์
-        }
-        printf("\n");
+    value = new int [*row * *col] ;
+ 
+
+    if( *row == 0 && *col == 0 ) {
+        printf( "Enter number of rows and columns: 0 0" ) ;
     }
+    else if( ( *row == 0 && *col > 0 ) || ( *row > 0 && *col == 0 ) ) {
+        printf( "Error: Invalid matrix dimensions.\n" ) ;
+    }else{
+        printf( "Enter the elements of matrix: " ) ;
+        for( int i = 0 ; i < *row ; i++ ) {
+            for( int j = 0 ; j < *col ; j++ ) {
+                scanf( "%d", &value[ i * ( *col ) + j ]  ) ; 
+                if( getchar() == '\n' &&  i == *row - 1 && j == *col - 2 ) {
+					printf( "Error: Invalid matrix input" ) ;
+					return 0 ;
+				}//end if
+            }//end for
+        }//end for
 
-    // ปล่อยหน่วยความจำ
-    free(data);
-
-    return 0;
-} //end function
+        printf( "Matrix (%dx%d): \n", *row, *col ) ;
+        for( int i = 0 ; i < *row ; i++ ) {
+            for( int j = 0 ; j < *col ; j++ ) {
+                printf( "%d ", value[ i * ( *col ) + j ] ) ;//แสดงค่าทีละตัว
+            }
+            printf( "\n" ) ;
+        }//end for
+    }//end else
+    return value ;
+ }//end function

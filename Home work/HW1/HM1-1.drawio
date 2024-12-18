@@ -1,0 +1,25 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="Q3cvQYS21OdC51Dl41IR">
+        <mxGraphModel dx="746" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="rPWBa_8IKYQbMNFpwSy3-1" target="rPWBa_8IKYQbMNFpwSy3-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rPWBa_8IKYQbMNFpwSy3-1" value="เริ่มต้น" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="365" y="110" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="rPWBa_8IKYQbMNFpwSy3-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="rPWBa_8IKYQbMNFpwSy3-4" target="rPWBa_8IKYQbMNFpwSy3-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rPWBa_8IKYQbMNFpwSy3-4" value="&quot;hello world&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+                    <mxGeometry x="365" y="220" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rPWBa_8IKYQbMNFpwSy3-5" value="สิ้นสุด" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="365" y="320" width="120" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
